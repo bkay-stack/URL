@@ -3,7 +3,7 @@
 header {
   position: relative;
   color: hsl(257, 7%, 63%);
-
+  transition: all 0.5s ease-in-out;
   /* display: flex; */
 }
 
@@ -16,7 +16,7 @@ header {
 
 .nav-links {
   display: flex;
-  gap: 15rem;
+  gap: 20rem;
 }
 
 ul {
@@ -52,6 +52,12 @@ form {
   display: none;
 }
 
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 13rem;
+}
+
 @media (max-width: 650px) {
   header {
     align-items: center;
@@ -68,7 +74,7 @@ form {
 
   .links {
     position: fixed;
-    top: 120px;
+    top: 85px;
     left: 0;
     width: calc(100% - 2rem);
     height: 60vh;
@@ -100,14 +106,28 @@ form {
     justify-content: space-between;
     flex-direction: column;
     gap: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   form {
     display: flex;
+
+    font-size: 1rem;
     gap: 1rem;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+  }
+
+  .sign-up-btn button {
+    width: 65%;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1.2rem;
+
+    border: none;
+    font-size: 1.5rem;
+    background-color: hsl(180, 66%, 49%);
+    color: white;
   }
 
   .hamburger-line {
@@ -116,6 +136,49 @@ form {
     height: 1px;
     background-color: hsl(257, 7%, 63%);
     margin: 5px;
+
+    width: 70%;
+  }
+
+  .hero-section {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    justify-content: center;
     width: 100%;
+  }
+
+  .hero-img {
+    width: 380px;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1.4rem;
+    justify-content: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-text button {
+    padding: 0.6rem 0.8rem;
+    border-radius: 1.2rem;
+    font-size: 1.2rem;
+    margin-top: 1.4rem;
+    border: none;
+    outline: 1px solid hsl(180, 66%, 49%);
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+
+    width: 50%;
   }
 }

@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./nav.style.css";
 import Hamburger from "../ham-menu/Hamburger";
 import LogoImg from "../../assets/images/logo.svg";
-// import WorkingIMG from "../../assets/images/illustration-working.svg";
+import WorkingIMG from "../../assets/images/illustration-working.svg";
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,7 +39,7 @@ const Nav = () => {
               {/* <div className="form-wrap"> */}
               <form action="">
                 <div className="login-btn">
-                  <button className="login">Login</button>
+                  <h>Login</h>
                 </div>
                 <div className="sign-up-btn">
                   <button className="sign-up">Sign Up</button>
@@ -54,6 +54,23 @@ const Nav = () => {
           <Hamburger className="hamburger" />
         </div>
       </nav>
+
+      <div className="hero-section">
+        <div className="hero-text">
+          <h1>More than just shorter links</h1>
+          <p>
+            Build your brand's recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <div className="hero-btn">
+            <button>Get Started</button>
+          </div>
+        </div>
+
+        <div className="hero-img">
+          <img src={WorkingIMG} alt="Working" />
+        </div>
+      </div>
     </header>
   );
 };
