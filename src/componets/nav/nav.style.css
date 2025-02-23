@@ -1,11 +1,10 @@
 /* nav bar */
 
 header {
-  background-color: #fff;
+  position: relative;
   color: hsl(257, 7%, 63%);
-  outline: 1px solid red;
 
-  display: flex;
+  /* display: flex; */
 }
 
 .nav-bar {
@@ -13,6 +12,11 @@ header {
   justify-content: space-between;
   align-items: center;
   /* padding: 1rem 7rem; */
+}
+
+.nav-links {
+  display: flex;
+  gap: 15rem;
 }
 
 ul {
@@ -27,7 +31,7 @@ ul li a {
 }
 
 ul li a:hover {
-  color: hsl(256, 15%, 26%);
+  color: hsl(257, 7%, 63%);
 }
 
 .logo-wrapper {
@@ -44,14 +48,14 @@ form {
 /* hamburger */
 .hamburger-container {
   color: hsl(257, 7%, 63%);
+  /* outline: 6px solid red; */
   display: none;
 }
 
 @media (max-width: 650px) {
   header {
-    justify-content: center;
+    align-items: center;
   }
-
   .nav-bar {
     padding: 1rem 2rem;
     align-items: center;
@@ -64,13 +68,22 @@ form {
 
   .links {
     position: fixed;
-    background: hsl(258, 33%, 21%);
-    width: 100%;
+    top: 120px;
+    left: 0;
+    width: calc(100% - 2rem);
     height: 60vh;
-    margin: 2rem;
+    background: hsl(257, 27%, 26%);
     text-align: center;
+    transform: translateX(calc(-100% - 1rem));
+    transition: transform 0.3s ease-in-out;
+    margin: 1rem;
 
-    outline: 1px solid red;
+    border-radius: 10px;
+  }
+
+  /* Class to toggle when hamburger is clicked */
+  .links.active {
+    transform: translateX(0);
   }
 
   .nav-links {
@@ -90,19 +103,19 @@ form {
     font-size: 1.2rem;
   }
 
-  .hamburger-line {
-    /* outline: 2px solid red; */
-
-    height: 1px;
-    background-color: hsl(257, 7%, 63%);
-    margin: 5px;
-    width: 90%;
-  }
-
   form {
     display: flex;
     gap: 1rem;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .hamburger-line {
+    /* outline: 2px solid red; */
+    width: 1px;
+    height: 1px;
+    background-color: hsl(257, 7%, 63%);
+    margin: 5px;
+    width: 100%;
   }
 }

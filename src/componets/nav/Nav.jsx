@@ -1,18 +1,26 @@
-import React from "react";
+import { useState } from "react";
+
 import "./nav.style.css";
 import Hamburger from "../ham-menu/Hamburger";
 import LogoImg from "../../assets/images/logo.svg";
 // import WorkingIMG from "../../assets/images/illustration-working.svg";
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header>
       <nav className="nav-bar">
         <div className="logo-wrapper">
           <div className="logo">
             <img src={LogoImg} alt="Company Logo" />
+            {/* <h1>SHORTLY</h1> */}
           </div>
 
-          <div className="links">
+          <div className={`links   ${isOpen ? "active" : ""}`}>
             <div className="nav-links">
               <ul className="nav-list">
                 <li>
@@ -42,7 +50,7 @@ const Nav = () => {
           </div>
         </div>
 
-        <div className="hamburger-container">
+        <div className="hamburger-container" onClick={toggleHamburger}>
           <Hamburger className="hamburger" />
         </div>
       </nav>
