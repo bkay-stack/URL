@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./nav.style.css";
 import Hamburger from "../ham-menu/Hamburger";
-import LogoImg from "../../assets/images/logo.svg";
+// import LogoImg from "../../assets/images/logo.svg";
 import WorkingIMG from "../../assets/images/illustration-working.svg";
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,12 +12,13 @@ const Nav = () => {
   };
 
   return (
-    <header>
-      <nav className="nav-bar">
-        <div className="logo-wrapper">
+    <>
+      <header>
+        <nav className="nav-bar">
+          {/* <div className="logo-wrapper"> */}
           <div className="logo">
-            <img src={LogoImg} alt="Company Logo" />
-            {/* <h1>SHORTLY</h1> */}
+            {/* <img src={LogoImg} alt="Company Logo" /> */}
+            <h1>SHORTLY</h1>
           </div>
 
           <div className={`links   ${isOpen ? "active" : ""}`}>
@@ -36,42 +37,39 @@ const Nav = () => {
 
               <div className="hamburger-line"></div>
 
-              {/* <div className="form-wrap"> */}
               <form action="">
-                <div className="login-btn">
-                  <h>Login</h>
-                </div>
-                <div className="sign-up-btn">
-                  <button className="sign-up">Sign Up</button>
-                </div>
+                {/* <div className="login-btn"> */}
+                <span className="login-btn">Login</span>
+                {/* </div> */}
+                <button className="sign-up-btn">Sign Up</button>
               </form>
-              {/* </div> */}
+            </div>
+            {/* </div> */}
+          </div>
+
+          <div className="hamburger-container" onClick={toggleHamburger}>
+            <Hamburger className="hamburger" />
+          </div>
+        </nav>
+
+        <div className="hero-section">
+          <div className="hero-text">
+            <h1>More than just shorter links</h1>
+            <p>
+              Build your brand's recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <div className="hero-btn">
+              <button>Get Started</button>
             </div>
           </div>
-        </div>
 
-        <div className="hamburger-container" onClick={toggleHamburger}>
-          <Hamburger className="hamburger" />
-        </div>
-      </nav>
-
-      <div className="hero-section">
-        <div className="hero-text">
-          <h1>More than just shorter links</h1>
-          <p>
-            Build your brand's recognition and get detailed insights on how your
-            links are performing.
-          </p>
-          <div className="hero-btn">
-            <button>Get Started</button>
+          <div className="hero-img">
+            <img src={WorkingIMG} alt="Working" />
           </div>
         </div>
-
-        <div className="hero-img">
-          <img src={WorkingIMG} alt="Working" />
-        </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

@@ -1,23 +1,29 @@
 /* nav bar */
 
 header {
-  position: relative;
   color: hsl(257, 7%, 63%);
   transition: all 0.5s ease-in-out;
-  /* display: flex; */
+  padding: 1rem;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1rem 7rem; */
+}
+
+.logo h1 {
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
 }
 
 .nav-links {
-  display: flex;
+  /* display: flex; */
   gap: 20rem;
 }
+
+/* List */
 
 ul {
   display: flex;
@@ -28,21 +34,11 @@ ul {
 ul li a {
   color: hsl(257, 7%, 63%);
   font-weight: bold;
+  font-size: 1rem;
 }
 
 ul li a:hover {
   color: hsl(257, 7%, 63%);
-}
-
-.logo-wrapper {
-  display: flex;
-  gap: 8rem;
-  align-items: center;
-}
-
-form {
-  display: flex;
-  gap: 1rem;
 }
 
 /* hamburger */
@@ -52,20 +48,68 @@ form {
   display: none;
 }
 
+.nav-links {
+  display: flex;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-btn {
+  color: hsl(257, 7%, 63%);
+  font-weight: bold;
+  cursor: pointer;
+  /* font-size: 4rem; */
+}
+
+.sign-up-btn {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 30px;
+
+  padding: 0.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* Hero section */
+
 .hero-section {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 13rem;
 }
 
-@media (max-width: 650px) {
+.hero-text h1 {
+  font-size: 4rem;
+  color: hsl(260, 8%, 14%);
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: hsl(257, 7%, 63%);
+  line-height: 1.5;
+}
+
+.hero-img img {
+  width: 1000px;
+}
+
+@media (max-width: 600px) {
   header {
-    align-items: center;
+    margin: 0;
+    padding: 0;
   }
   .nav-bar {
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
     align-items: center;
-    padding: 1rem;
+    outline: 1px solid red;
   }
 
   .hamburger-container {
@@ -77,7 +121,7 @@ form {
     top: 85px;
     left: 0;
     width: calc(100% - 2rem);
-    height: 60vh;
+    height: 50vh;
     background: hsl(257, 27%, 26%);
     text-align: center;
     transform: translateX(calc(-100% - 1rem));
@@ -111,27 +155,27 @@ form {
 
   form {
     display: flex;
-
     font-size: 1rem;
-    gap: 1rem;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
+    text-align: center;
   }
 
-  .sign-up-btn button {
-    width: 65%;
+  .sign-up-btn {
     padding: 0.4rem 0.8rem;
     border-radius: 1.2rem;
-
+    display: flex;
     border: none;
     font-size: 1.4rem;
     background-color: hsl(180, 66%, 49%);
     color: white;
+    width: 60%;
+    justify-content: center;
+    align-items: center; /* Ensure the text inside the button is centered */
+    margin: 0 auto; /* Center the button itself */
   }
 
   .hamburger-line {
-    /* outline: 2px solid red; */
     width: 1px;
     height: 1px;
     background-color: hsl(257, 7%, 63%);
@@ -149,7 +193,7 @@ form {
   }
 
   .hero-img {
-    width: 380px;
+    width: 340px;
   }
 
   .hero-text {
@@ -161,8 +205,7 @@ form {
   }
 
   .hero-text h1 {
-    font-size: 2.4rem;
-    line-height: 1.2;
+    font-size: 2.2rem;
   }
 
   .hero-text p {
@@ -180,5 +223,95 @@ form {
     color: white;
 
     width: 50%;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  header {
+    outline: 1px solid green;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid blue;
+  }
+
+  .logo img {
+    max-width: 800px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    /* gap: 20rem; */
+
+    outline: 1px solid green;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 1rem;
+  }
+
+  ul li a {
+    color: hsl(257, 7%, 63%);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    gap: 8rem;
+    align-items: center;
+  }
+
+  form {
+    /* display: flex; */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .login-btn {
+    color: hsl(257, 7%, 63%);
+    font-weight: bold;
+    /* font-size: 4rem; */
+  }
+
+  .sign-up {
+    background-color: hsl(180, 66%, 49%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  .login-btn {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap: 20rem;
+  }
+
+  .hero-section {
+    gap: 13rem;
+  }
+
+  .hero-text h1 {
+    font-size: 4rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .hero-img img {
+    width: 1000px;
   }
 }
