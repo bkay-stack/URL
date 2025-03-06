@@ -1,0 +1,31 @@
+.shortner {
+  background-image: url("../../assets/images/bg-shorten-mobile.svg") no-repeat;
+
+  background-size: cover;
+  background-position: center;
+  background-color: hsl(257, 27%, 26%);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.shortner input {
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.4rem;
+}
+
+.shorten-btn {
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 5px;
+}

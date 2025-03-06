@@ -102,14 +102,9 @@ form {
 }
 
 @media (max-width: 600px) {
-  header {
-    margin: 0;
-    padding: 0;
-  }
   .nav-bar {
-    /* padding: 1rem 2rem; */
     align-items: center;
-    outline: 1px solid red;
+    justify-content: space-between;
   }
 
   .hamburger-container {
@@ -227,7 +222,7 @@ form {
 }
 
 /* Desktop styles */
-@media (min-width: 1025px) {
+@media (min-width: 800px) {
   header {
     outline: 1px solid green;
   }

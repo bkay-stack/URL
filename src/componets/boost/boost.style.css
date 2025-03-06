@@ -1,0 +1,49 @@
+.boost {
+  background-color: hsl(257, 27%, 26%);
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.boost img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.boost-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.boost-content h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.boost-content button {
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boost-content button:hover {
+  background-color: hsl(180, 66%, 70%);
+}
