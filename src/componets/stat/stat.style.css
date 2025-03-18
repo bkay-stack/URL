@@ -106,6 +106,7 @@
   color: hsl(257, 7%, 63%);
   margin-top: 1rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 @media screen and (min-width: 800px) {
@@ -172,18 +173,18 @@
   /* Icon position */
 
   .img-postion-brand {
-    top: 10px;
+    top: 20px;
     /* left: -60px; */
-    right: 900px;
+    right: 1080px;
   }
 
   .img-postion-detail {
-    top: 10px;
-    transform: translateX(200px);
+    top: -40px;
+    transform: translateX(30px);
   }
 
   .img-postion-fully {
-    top: 10px;
-    right: 185px;
+    top: -40px;
+    right: 350px;
   }
 }
