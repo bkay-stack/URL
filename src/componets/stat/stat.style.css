@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: hsl(0, 0%, 92%);
+  z-index: -999999;
 }
 
 .stat-title {
@@ -18,28 +19,26 @@
   text-align: center;
 }
 
+/* Line connector */
+
 .line-connector {
   position: absolute;
-
   top: 30%;
-
-  right: 150px;
+  right: 170px;
   /* transform: translateX(200px); */
+  z-index: -1;
 
-  height: 100%;
+  height: 60%;
   width: 5px;
   background-color: hsl(180, 66%, 49%);
-
-  outline: 1px solid red;
 }
 
 .stat-container-img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* outline: 1px solid red; */
-  text-align: center;
 
+  text-align: center;
   position: relative;
   margin-top: 1rem;
 }
@@ -50,31 +49,31 @@
   border-radius: 10px;
   margin: 0.8rem;
   flex: 1;
+  margin-top: 4rem;
 }
 
 .mg-top {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 /* Icon position */
 
 .img-postion-brand {
   position: absolute;
-  top: 15px;
-  transform: translateX(140px);
-  outline: 1px solid red;
+  top: 22px;
+  transform: translateX(120px);
 }
 
 .img-postion-detail {
   position: absolute;
-  top: 270px;
-  transform: translateX(140px);
+  top: 330px;
+  transform: translateX(120px);
 }
 
 .img-postion-fully {
   position: absolute;
-  top: 550px;
-  transform: translateX(140px);
+  top: 620px;
+  transform: translateX(120px);
 }
 
 /* Img size */
@@ -106,7 +105,6 @@
 
 @media screen and (min-width: 800px) {
   .stat-container {
-    outline: 1px solid red;
     padding: 5rem;
 
     max-width: 1400px;
@@ -149,12 +147,10 @@
   /* Card-move */
   .detailed {
     transform: translateY(20px);
-    outline: 1px solid red;
   }
 
   .fully {
     transform: translateY(40px);
-    outline: 1px solid red;
   }
 
   /* Line */
