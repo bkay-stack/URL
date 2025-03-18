@@ -24,7 +24,7 @@
 .line-connector {
   position: absolute;
   top: 30%;
-  right: 170px;
+  right: 190px;
   /* transform: translateX(200px); */
   z-index: -1;
 
@@ -61,13 +61,13 @@
 .img-postion-brand {
   position: absolute;
   top: 22px;
-  transform: translateX(120px);
+  transform: translateX(140px);
 }
 
 .img-postion-detail {
   position: absolute;
-  top: 330px;
-  transform: translateX(120px);
+  top: 303px;
+  transform: translateX(138px);
 }
 
 .img-postion-fully {
