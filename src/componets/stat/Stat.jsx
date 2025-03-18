@@ -13,40 +13,50 @@ const Stat = () => {
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
-      </div>
 
-      <div className="stat-container-img">
-        <div className="brand bg-white mg-top">
-          <div className="brand-img img-postion-brand icon-size img-bg-style">
-            <img src={brandImg} alt="" />
+        <div className="stat-container-img">
+          {/* Brand */}
+          <div className="brand bg-white mg-top ">
+            <div className="brand-img img-postion-brand icon-size img-bg-style">
+              <img src={brandImg} alt="" />
+            </div>
+            <h2 className="bg-header">Brand Recognition</h2>
+            <p className="bg-text">
+              {" "}
+              Boost your brand recognition with each click. Generic links don’t
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </p>
           </div>
-          <h2 className="bg-header">Brand Recognition</h2>
-          <p className="bg-text">
-            {" "}
-            Boost your brand recognition with each click. Generic links don’t
-            mean a thing. Branded links help instil confidence in your content.
-          </p>
-        </div>
-        <div className="detailed bg-white mg-top">
-          <div className="detailedImg img-postion-detail icon-size img-bg-style">
-            <img src={detailedImg} alt="" />
+
+          {/* Connector line */}
+          <div className="line-connector"></div>
+
+          {/* Detailed */}
+          <div className="detailed bg-white mg-top">
+            <div className="detailedImg img-postion-detail icon-size img-bg-style">
+              <img src={detailedImg} alt="" />
+            </div>
+            <h2 className="bg-header">Detailed Records</h2>
+            <p className="bg-text">
+              {" "}
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
+            </p>
           </div>
-          <h2 className="bg-header">Detailed Records</h2>
-          <p className="bg-text">
-            {" "}
-            Gain insights into who is clicking your links. Knowing when and
-            where people engage with your content helps inform better decisions.
-          </p>
-        </div>
-        <div className="fully bg-white mg-top">
-          <div className="fullyImg img-postion-fully icon-size img-bg-style">
-            <img src={fullyImg} alt="" />
+
+          {/* Fully */}
+          <div className="fully bg-white mg-top">
+            <div className="fullyImg img-postion-fully icon-size img-bg-style">
+              <img src={fullyImg} alt="" />
+            </div>
+            <h2 className="bg-header"> Fully Customizable</h2>
+            <p className="bg-text">
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </p>
           </div>
-          <h2 className="bg-header"> Fully Customizable</h2>
-          <p className="bg-text">
-            Improve brand awareness and content discoverability through
-            customizable links, supercharging audience engagement.
-          </p>
         </div>
       </div>
     </div>

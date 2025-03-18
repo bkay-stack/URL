@@ -1,5 +1,4 @@
-/* nav bar */
-
+/* Base styles */
 header {
   color: hsl(257, 7%, 63%);
   transition: all 0.5s ease-in-out;
@@ -19,39 +18,34 @@ header {
 }
 
 .nav-links {
-  /* display: flex; */
-  gap: 20rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 /* List */
-
 ul {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 ul li a {
   color: hsl(257, 7%, 63%);
   font-weight: bold;
   font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 ul li a:hover {
-  color: hsl(257, 7%, 63%);
+  color: hsl(260, 8%, 14%);
 }
 
-/* hamburger */
-.hamburger-container {
-  color: hsl(257, 7%, 63%);
-  /* outline: 6px solid red; */
-  display: none;
-}
-
-.nav-links {
-  display: flex;
-}
-
+/* Form elements */
 form {
   display: flex;
   align-items: center;
@@ -62,7 +56,14 @@ form {
   color: hsl(257, 7%, 63%);
   font-weight: bold;
   cursor: pointer;
-  /* font-size: 4rem; */
+  font-size: 1rem;
+  background: none;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.login-btn:hover {
+  color: hsl(260, 8%, 14%);
 }
 
 .sign-up-btn {
@@ -70,25 +71,44 @@ form {
   color: hsl(0, 0%, 100%);
   border: none;
   border-radius: 30px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  padding: 0.5rem;
-  margin-right: 1rem;
+.sign-up-btn:hover {
+  background-color: hsl(180, 66%, 65%);
+}
+
+/* Hamburger Menu */
+.hamburger-container {
+  display: none;
   cursor: pointer;
 }
 
-/* Hero section */
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: hsl(257, 7%, 63%);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
 
+/* Hero section */
 .hero-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 13rem;
+  gap: 4rem;
+  margin-top: 2rem;
 }
 
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: hsl(260, 8%, 14%);
   line-height: 1.2;
+  margin-top: 0;
 }
 
 .hero-text p {
@@ -98,15 +118,12 @@ form {
 }
 
 .hero-img img {
-  width: 1000px;
+  max-width: 100%;
+  height: auto;
 }
 
+/* Mobile styles */
 @media (max-width: 600px) {
-  .nav-bar {
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .hamburger-container {
     display: block;
   }
@@ -116,14 +133,15 @@ form {
     top: 85px;
     left: 0;
     width: calc(100% - 2rem);
-    height: 50vh;
+    height: auto;
     background: hsl(257, 27%, 26%);
     text-align: center;
     transform: translateX(calc(-100% - 1rem));
     transition: transform 0.3s ease-in-out;
     margin: 1rem;
-
     border-radius: 10px;
+    padding: 2rem 0;
+    z-index: 100;
   }
 
   /* Class to toggle when hamburger is clicked */
@@ -132,181 +150,138 @@ form {
   }
 
   .nav-links {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding-top: 3rem;
   }
 
   ul {
-    display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    gap: 2rem;
-    font-size: 1rem;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  ul li a {
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  ul li a:hover {
+    color: hsl(180, 66%, 49%);
   }
 
   form {
-    display: flex;
-    font-size: 1rem;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
+    width: 80%;
+    padding-top: 1.5rem;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.2);
+    margin-top: 1rem;
+  }
+
+  .login-btn {
+    color: white;
+    margin-bottom: 1rem;
   }
 
   .sign-up-btn {
-    padding: 0.4rem 0.8rem;
-    border-radius: 1.2rem;
-    display: flex;
-    border: none;
-    font-size: 1.4rem;
-    background-color: hsl(180, 66%, 49%);
-    color: white;
-    width: 60%;
-    justify-content: center;
-    align-items: center; /* Ensure the text inside the button is centered */
-    margin: 0 auto; /* Center the button itself */
-  }
-
-  .hamburger-line {
-    width: 1px;
-    height: 1px;
-    background-color: hsl(257, 7%, 63%);
-    margin: 5px;
-
-    width: 70%;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
   }
 
   .hero-section {
-    display: flex;
     flex-direction: column-reverse;
-    gap: 2rem;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .hero-img {
-    width: 340px;
-  }
-
-  .hero-text {
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    margin-top: 1.4rem;
-    justify-content: center;
+    gap: 2rem;
+    padding: 0 1rem;
   }
 
   .hero-text h1 {
     font-size: 2.2rem;
+    margin-bottom: 1rem;
   }
 
   .hero-text p {
     font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
   .hero-text button {
-    padding: 0.6rem 0.8rem;
-    border-radius: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
     font-size: 1.2rem;
-    margin-top: 1.4rem;
     border: none;
-    outline: 1px solid hsl(180, 66%, 49%);
     background-color: hsl(180, 66%, 49%);
     color: white;
-
-    width: 50%;
+    margin: 0 auto;
+    display: block;
+    width: 60%;
+    max-width: 200px;
+    cursor: pointer;
   }
 }
 
 /* Desktop styles */
 @media (min-width: 800px) {
-  header {
-    outline: 1px solid green;
-  }
-
   .logo-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    outline: 1px solid blue;
+    gap: 3rem;
   }
 
   .logo img {
-    max-width: 800px;
+    max-width: 150px;
+  }
+
+  .nav-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 
   .nav-links {
-    display: flex;
-    align-items: center;
-    /* gap: 20rem; */
-
-    outline: 1px solid green;
-  }
-
-  ul {
-    display: flex;
     justify-content: space-between;
-    gap: 2rem;
-    font-size: 1rem;
+    flex-grow: 1;
+    margin-left: 3rem;
   }
-
-  ul li a {
-    color: hsl(257, 7%, 63%);
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
-  .logo-wrapper {
-    display: flex;
-    gap: 8rem;
-    align-items: center;
-  }
-
-  form {
-    /* display: flex; */
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .login-btn {
-    color: hsl(257, 7%, 63%);
-    font-weight: bold;
-    /* font-size: 4rem; */
-  }
-
-  .sign-up {
-    background-color: hsl(180, 66%, 49%);
-    color: hsl(0, 0%, 100%);
-    border-radius: 20px;
-    border: none;
-    font-weight: bold;
-    font-size: 0.8rem;
-  }
-
-  .login-btn {
-    font-size: 1rem;
-  }
-
-  .nav-links {
-    gap: 20rem;
+  .hamburger-line {
+    display: none;
   }
 
   .hero-section {
-    gap: 13rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    gap: 2rem;
   }
 
-  .hero-text h1 {
-    font-size: 4rem;
+  .hero-text {
+    flex: 1;
   }
 
-  .hero-text p {
-    font-size: 1.2rem;
+  .hero-img {
+    flex: 1;
+    text-align: right;
   }
 
   .hero-img img {
-    width: 1000px;
+    max-width: 100%;
+  }
+
+  .hero-text button {
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .hero-text button:hover {
+    background-color: hsl(180, 66%, 65%);
   }
 }

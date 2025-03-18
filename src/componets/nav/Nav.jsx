@@ -21,6 +21,7 @@ const Nav = () => {
             <h1>SHORTLY</h1>
           </div>
 
+          {/* NAV BAR */}
           <div className={`links   ${isOpen ? "active" : ""}`}>
             <div className="nav-links">
               <ul className="nav-list">
@@ -51,6 +52,8 @@ const Nav = () => {
             <Hamburger className="hamburger" />
           </div>
         </nav>
+
+        {/* HERO SECTION */}
 
         <div className="hero-section">
           <div className="hero-text">
