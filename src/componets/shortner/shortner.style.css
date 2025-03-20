@@ -1,31 +1,67 @@
 .shortner {
-  background-image: url("../../assets/images/bg-shorten-mobile.svg") no-repeat;
-
+  background-image: url("../../assets/images/bg-shorten-mobile.svg");
   background-size: cover;
   background-position: center;
   background-color: hsl(257, 27%, 26%);
+  position: relative;
+  object-fit: cover;
+  object-position: center;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1.5rem;
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
   flex-direction: column;
 }
 
-.shortner input {
+form {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+form input {
   padding: 0.6rem;
   border-radius: 5px;
   border: none;
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 3vw, 1.4rem); /* Responsive font size */
+  width: 100%;
 }
 
 .shorten-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 0.6rem;
   background-color: hsl(180, 66%, 49%);
   color: white;
-  font-size: 1.4rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
   border: none;
   border-radius: 5px;
+  width: 20%;
+  white-space: nowrap;
+}
+
+/* Add responsive padding for smaller screens */
+@media screen and (max-width: 600px) {
+  .shortner {
+    padding: 1.2rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  .shorten-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .shortner {
+    flex-direction: row;
+    background-image: url("../../assets/images/bg-shorten-desktop.svg");
+    padding: 2.5rem;
+  }
 }

@@ -5,6 +5,8 @@
   justify-content: center;
   background-color: hsl(0, 0%, 92%);
   z-index: -999999;
+
+  margin-top: 3rem;
 }
 
 .stat-title {
@@ -173,9 +175,9 @@
   /* Icon position */
 
   .img-postion-brand {
-    top: 20px;
+    top: 28px;
     /* left: -60px; */
-    right: 1080px;
+    right: 1215px;
   }
 
   .img-postion-detail {
@@ -185,6 +187,6 @@
 
   .img-postion-fully {
     top: -40px;
-    right: 350px;
+    right: 400px;
   }
 }
