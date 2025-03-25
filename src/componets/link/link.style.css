@@ -1,0 +1,88 @@
+.url-list {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #fff;
+  color: hsl(255, 11%, 22%);
+  width: 100%;
+
+  margin-top: 2rem;
+  text-align: left;
+  outline: 1px solid hsl(180, 66%, 49%);
+}
+
+.original-copy {
+  padding: 0.5rem;
+}
+
+.original-copy p {
+  font-size: 1rem;
+}
+
+.url-line {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(257, 27%, 26%);
+
+  margin-top: 10px;
+}
+
+.copied-link {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.copied-link p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.copied-link button {
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  margin-top: 10px;
+}
+
+.copied-link .copied {
+  background-color: hsl(257, 27%, 26%);
+  color: #fff;
+}
+
+@media (min-width: 650px) and (max-width: 1600px) {
+  .url-list {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copied-link {
+    display: flex;
+    /* align-items: center; */
+  }
+
+  .url-line {
+    display: none;
+  }
+
+  .copied-link {
+    gap: 1rem;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .copied-link button {
+    font-size: 0.8rem;
+    padding: 0.4rem 1.5rem;
+  }
+}

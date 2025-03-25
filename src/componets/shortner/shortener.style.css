@@ -1,4 +1,4 @@
-.shortner {
+.shortener {
   background-image: url("../../assets/images/bg-shorten-mobile.svg");
   background-size: cover;
   background-position: center;
@@ -44,7 +44,7 @@ form input {
 
 /* Add responsive padding for smaller screens */
 @media screen and (max-width: 600px) {
-  .shortner {
+  .shortener {
     padding: 1.2rem;
   }
 
@@ -59,7 +59,7 @@ form input {
 }
 
 @media screen and (min-width: 800px) {
-  .shortner {
+  .shortener {
     flex-direction: row;
     background-image: url("../../assets/images/bg-shorten-desktop.svg");
     padding: 2.5rem;
