@@ -1,19 +1,39 @@
 import { useState } from "react";
 import "./shortener.style.css";
 import Link from "../link/Link";
+import axios from "axios";
 // import CopyToClipboard from "react-copy-to-clipboard";
 
 const Shortener = () => {
   const [userInput, setUserInput] = useState("");
+  const [shortenLinks, setShortenLinks] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const userInputHandler = (event) => {
     setUserInput(event.target.value);
-    console.log(userInput);
+  };
+
+  const fetchData = async () => {
+    if (!userInput) return;
+
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `https://is.gd/create.php?format=json&url=${userInput}`
+      );
+      setShortenLinks((prevLinks) => [...prevLinks, response.data.shorturl]);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("Submitted");
+    fetchData(); // Now fetchData is available here
+
+    console.log("Shorten Link: ", shortenLinks);
   };
 
   return (
@@ -34,7 +54,9 @@ const Shortener = () => {
         </form>
       </section>
       <>
-        <Link userInput={userInput} />
+        {shortenLinks.length > 0 && (
+          <Link shortenLinks={shortenLinks} loading={loading} />
+        )}
       </>
     </>
   );

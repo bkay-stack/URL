@@ -1,76 +1,44 @@
 import { useState, useEffect } from "react";
 import "./link.style.css";
 import CopyToClipboard from "react-copy-to-clipboard";
-import axios from "axios";
 
-const Link = ({ userInput }) => {
-  const [shortenLink, setShortenLink] = useState("");
-  const [isCopied, setIsCopied] = useState(false);
-  const [loading, setLoading] = useState(false);
-  // Functions
-  const fetchData = async () => {
-    if (!userInput) return;
+const Link = ({ shortenLinks, loading }) => {
+  const [copiedLinkIndex, setCopiedLinkIndex] = useState(null);
 
-    try {
-      setLoading(true);
-      const response = await axios.post(
-        `https://api.tinyurl.com/create
-?url=${userInput}&alias=${userInput}&format=json`
-      );
-      console.log(response.response.data.data.tiny_url);
-      setShortenLink(response.response.data.data.tiny_url);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const copyHandler = () => {
-    setIsCopied(true);
-
-    console.log("Copied");
+  const copyHandler = (index) => {
+    setCopiedLinkIndex(index); // Set the copied index
+    console.log("Copied:", index);
   };
 
   // useEffect
-
   useEffect(() => {
-    if (!userInput) return;
-
-    const delay = setTimeout(() => {
-      fetchData();
-    }, 800); // Wait 800ms after user stops typing
-
-    return () => clearTimeout(delay); // Clear timeout on new input change
-  }, [userInput]);
-
-  // useEffect
-  useEffect(() => {
-    if (isCopied) {
+    if (copiedLinkIndex !== null) {
       setTimeout(() => {
-        setIsCopied(false);
+        setCopiedLinkIndex(false);
       }, 1000);
     }
-  }, [isCopied]);
+  }, [copiedLinkIndex]);
 
   return (
     // Container
-    <div className="url-list">
-      <div className="original-copy">
-        <p>Original</p>
-        {/* Line */}
-      </div>
+    shortenLinks.map((link, index) => (
+      <div key={index} className="url-list">
+        <div className="original-copy">
+          <p>Original</p>
+        </div>
 
-      <div className="url-line"></div>
+        <div className="url-line"></div>
 
-      <div className="copied-link">
-        <p>{shortenLink}</p>
-        <CopyToClipboard text={shortenLink} onCopy={copyHandler}>
-          <button className={isCopied ? "copied" : ""}>
-            {isCopied ? "Copied" : "Copy"}
-          </button>
-        </CopyToClipboard>
+        <div className="copied-link">
+          <p>{link}</p>
+          <CopyToClipboard text={link} onCopy={() => copyHandler(index)}>
+            <button className={copiedLinkIndex === index ? "copied" : ""}>
+              {copiedLinkIndex === index ? "Copied" : "Copy"}
+            </button>
+          </CopyToClipboard>
+        </div>
       </div>
-    </div>
+    ))
   );
 };
 

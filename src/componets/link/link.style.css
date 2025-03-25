@@ -57,6 +57,7 @@
 .copied-link .copied {
   background-color: hsl(257, 27%, 26%);
   color: #fff;
+  padding: 0.4rem 1.1rem;
 }
 
 @media (min-width: 650px) and (max-width: 1600px) {
