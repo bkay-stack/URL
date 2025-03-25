@@ -8,21 +8,40 @@ const Shortener = () => {
   const [userInput, setUserInput] = useState("");
   const [shortenLinks, setShortenLinks] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [error, setError] = useState("");
   const userInputHandler = (event) => {
     setUserInput(event.target.value);
   };
 
   const fetchData = async () => {
-    if (!userInput) return;
+    if (!userInput.trim().length) {
+      setError("Please enter a valid URL");
+      return;
+    }
+
+    const urlPattern = /^(https?:\/\/)?([\w\d\-]+\.)+[\w\d]{2,}.*$/;
+    if (!urlPattern.test(userInput)) {
+      setError("Invalid URL format. Please enter a valid link.");
+      return;
+    }
 
     try {
       setLoading(true);
+      setError("");
       const response = await axios.get(
         `https://is.gd/create.php?format=json&url=${userInput}`
       );
-      setShortenLinks((prevLinks) => [...prevLinks, response.data.shorturl]);
+
+      if (!response.data.shorturl) {
+        throw new Error("Failed to generate short link.");
+      }
+
+      setShortenLinks((prevLinks) => [
+        ...prevLinks,
+        { original: userInput, short: response.data.shorturl },
+      ]);
     } catch (error) {
+      setError("Failed to shorten the link. Please try again.");
       console.error(error);
     } finally {
       setLoading(false);
@@ -31,7 +50,7 @@ const Shortener = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    fetchData(); // Now fetchData is available here
+    fetchData();
 
     console.log("Shorten Link: ", shortenLinks);
   };
@@ -43,10 +62,11 @@ const Shortener = () => {
           <>
             <input
               type="text"
-              value={userInput}
               placeholder="Shorten a link here..."
+              value={userInput}
               onChange={userInputHandler}
             />
+
             <button type="submit" className="shorten-btn">
               Shorten It!
             </button>

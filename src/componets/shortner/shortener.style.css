@@ -42,6 +42,12 @@ form input {
   white-space: nowrap;
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 /* Add responsive padding for smaller screens */
 @media screen and (max-width: 600px) {
   .shortener {

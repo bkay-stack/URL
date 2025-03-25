@@ -24,14 +24,14 @@ const Link = ({ shortenLinks, loading }) => {
     shortenLinks.map((link, index) => (
       <div key={index} className="url-list">
         <div className="original-copy">
-          <p>Original</p>
+          <p>{link.original}</p>
         </div>
 
         <div className="url-line"></div>
 
         <div className="copied-link">
-          <p>{link}</p>
-          <CopyToClipboard text={link} onCopy={() => copyHandler(index)}>
+          <p>{link.short}</p>
+          <CopyToClipboard text={link.short} onCopy={() => copyHandler(index)}>
             <button className={copiedLinkIndex === index ? "copied" : ""}>
               {copiedLinkIndex === index ? "Copied" : "Copy"}
             </button>
