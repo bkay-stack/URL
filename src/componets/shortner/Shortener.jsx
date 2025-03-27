@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./shortener.style.css";
 import Link from "../link/Link";
 import axios from "axios";
@@ -55,6 +55,12 @@ const Shortener = () => {
     console.log("Shorten Link: ", shortenLinks);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setError("");
+    }, 3000);
+  }, [error]);
+
   return (
     <>
       <section className="shortener">
@@ -65,6 +71,7 @@ const Shortener = () => {
               placeholder="Shorten a link here..."
               value={userInput}
               onChange={userInputHandler}
+              className={error ? "custom-input" : ""}
             />
 
             <button type="submit" className="shorten-btn">
@@ -72,6 +79,8 @@ const Shortener = () => {
             </button>
           </>
         </form>
+
+        <p className="error-message">{error}</p>
       </section>
       <>
         {shortenLinks.length > 0 && (

@@ -9,9 +9,7 @@
   border-radius: 10px;
   padding: 1.5rem;
   margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
+  color: white;
 }
 
 form {
@@ -26,6 +24,7 @@ form input {
   border: none;
   font-size: clamp(1rem, 3vw, 1.4rem); /* Responsive font size */
   width: 100%;
+  white-space: nowrap;
 }
 
 .shorten-btn {
@@ -40,6 +39,16 @@ form input {
   border-radius: 5px;
   width: 20%;
   white-space: nowrap;
+}
+
+/* Error message */
+
+.custom-input {
+  outline: 1px solid red;
+}
+
+.custom-input::placeholder {
+  color: red;
 }
 
 .error-message {
