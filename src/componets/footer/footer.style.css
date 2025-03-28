@@ -22,8 +22,9 @@ footer {
   margin-top: 1rem;
 }
 
-.icons-footer {
-  /* gap: 10px; */
+.footer-list-items {
+  outline: 1px solid red;
+  margin-top: 2rem;
 }
 
 .icon-footer {
@@ -40,12 +41,21 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+
+    text-align: left;
+  }
+
+  .footer-list-items {
+    display: flex;
+    gap: 2rem;
+
+    margin-left: 7rem;
   }
 
   .footer-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .icon-footer {

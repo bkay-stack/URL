@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./nav.style.css";
 import Hamburger from "../ham-menu/Hamburger";
@@ -8,8 +8,17 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleHamburger = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
+
+    console.log("isOpen after click:", !isOpen);
   };
+
+  useEffect(() => {
+    console.log("Effect ran, isOpen:", isOpen);
+
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    console.log(document.body.style.overflow);
+  }, [isOpen]);
 
   return (
     <>

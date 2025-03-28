@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./link.style.css";
 import CopyToClipboard from "react-copy-to-clipboard";
 
-const Link = ({ shortenLinks, loading }) => {
+const Link = ({ shortenLinks }) => {
   const [copiedLinkIndex, setCopiedLinkIndex] = useState(null);
 
   const copyHandler = (index) => {
