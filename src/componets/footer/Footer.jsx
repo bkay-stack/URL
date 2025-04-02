@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-list-items">
           <div className="footer-links">
             <div className="footer-link-header">
-              <h2>Features</h2>
+              <h2 className="margin-top">Features</h2>
             </div>
             <ul className="footer-list ">
               <li>
@@ -30,8 +30,8 @@ const Footer = () => {
             </ul>
           </div>
           <div className="footer-links">
-            <div className="footer-link-header">
-              <h2>Resources</h2>
+            <div className="footer-link-header ">
+              <h2 className="margin-top">Resources</h2>
             </div>
             <ul className="footer-list">
               <li>
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
           <div className="footer-links">
             <div className="footer-link-header">
-              <h2>Company</h2>
+              <h2 className="margin-top">Company</h2>
             </div>
             <ul className="footer-list">
               <li>
@@ -63,8 +63,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-links icons-footer ">
-          <ul className="footer-list icon-footer">
+        <div className=" icons-footer ">
+          <ul className=" icon-footer">
             <li>
               <img src={fbImg} alt="" />
             </li>
