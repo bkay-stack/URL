@@ -1,6 +1,7 @@
 footer {
   background-color: hsl(255, 11%, 22%);
   color: hsl(0, 25%, 98%);
+  transition: all 0.3s ease-in-out;
 }
 
 .footer-wrap {

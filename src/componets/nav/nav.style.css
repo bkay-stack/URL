@@ -3,6 +3,8 @@ header {
   color: hsl(257, 7%, 63%);
   transition: all 0.5s ease-in-out;
   padding: 1rem;
+
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-bar {
